@@ -39,7 +39,8 @@ gem 'jbuilder', '~> 2.5'
 gem "select2-rails"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem "nested_form_fields"
+gem 'bootstrap-datepicker-rails'
 group :development, :test do
   gem 'rspec-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
