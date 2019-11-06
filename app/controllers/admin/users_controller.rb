@@ -6,6 +6,7 @@ class Admin::UsersController < AdminController
 
   def edit
     @user = User.find(params[:id])
+    @user.create_profile unless @user.profile
   end
 
   def update
@@ -21,7 +22,7 @@ class Admin::UsersController < AdminController
   protected
 
   def user_params
-    params.require(:user).permit(:email, :group_ids => [])
+    params.require(:user).permit(:time_zone, :profile_attributes => [:id, :legal_name, :birthday, :location, :education, :occupation, :bio, :specialty] )
   end
 
 end
