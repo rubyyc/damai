@@ -4,8 +4,10 @@
 
      def index
          # @registrations = @event.registrations.includes(:ticket).order("id DESC")
-         @registrations = @event.registrations.includes(:ticket).order("id DESC").page(params[:page]).per(20)
+         # @registrations = @event.registrations.includes(:ticket).order("id DESC").page(params[:page]).per(20)
+         @q = @event.registrations.ransack(params[:q])
 
+         @registrations = @q.result.includes(:ticket).order("id DESC").page(params[:page])
          # if params[:status].present? && Registration::STATUS.include?(params[:status])
          #   @registrations = @registrations.by_status(params[:status])
          # end
@@ -33,6 +35,8 @@
          if params[:registration_id].present?
            @registrations = @registrations.where( :id => params[:registration_id].split(",") )
          end
+
+
 
      end
 

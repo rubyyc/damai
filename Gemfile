@@ -42,6 +42,7 @@ gem 'jquery-ui-rails'
 gem "rails-i18n"
 gem "devise-i18n"
 gem 'kaminari'
+gem 'ransack'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem "nested_form_fields"
