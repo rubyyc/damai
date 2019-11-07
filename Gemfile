@@ -43,6 +43,9 @@ gem "rails-i18n"
 gem "devise-i18n"
 gem 'kaminari'
 gem 'ransack'
+
+gem 'carrierwave'
+gem "mini_magick"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem "nested_form_fields"

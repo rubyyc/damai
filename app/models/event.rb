@@ -1,9 +1,12 @@
 class Event < ApplicationRecord
+ mount_uploader :logo, EventLogoUploader
 
  include RankedModel
  ranks :row_order
 
  validates_presence_of :name
+
+
 
  STATUS = ["draft", "public", "private"]
  validates_inclusion_of :status, :in => STATUS
