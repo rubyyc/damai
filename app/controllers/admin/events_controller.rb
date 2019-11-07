@@ -1,7 +1,7 @@
 class Admin::EventsController < AdminController
 
   def index
-    @events = Event.all
+    @events = Event.rank(:row_order).all
   end
 
   def show
@@ -62,6 +62,19 @@ class Admin::EventsController < AdminController
     flash[:alert] = "成功完成 #{total} 笔"
     redirect_to admin_events_path
   end
+
+  def reorder
+    @event = Event.find(params[:id])
+    @event.row_order_position = params[:position]
+    @event.save!
+    # redirect_to admin_events_path
+
+    respond_to do |format|
+      format.html { redirect_to admin_events_path }
+      format.json { render :json => { :message => "ok" }}
+    end
+  end
+
 
   protected
 
