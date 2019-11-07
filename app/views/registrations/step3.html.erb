@@ -1,0 +1,33 @@
+<h1><%= @event.name %></h1>
+
+<h2>Step 3</h2>
+
+<%= form_for @registration, :url => update_step3_event_registration_path(@event, @registration) do |f| %>
+
+  <div class="form-group <%= (f.object.errors[:website].any?)? "has-error" : "" %>">
+    <%= f.label :website, "网站", :class => "control-label" %>
+
+    <%= f.url_field :website, :class => "form-control" %>
+
+    <% if f.object.errors[:website] %>
+      <span class="help-block"><%= safe_join(f.object.errors[:website], "、") %></span>
+    <% end %>
+  </div>
+
+  <div class="form-group <%= (f.object.errors[:bio].any?)? "has-error" : "" %>">
+    <%= f.label :bio, "介绍", :class => "control-label" %>
+
+    <%= f.text_area :bio, :class => "form-control" %>
+
+    <% if f.object.errors[:bio] %>
+      <span class="help-block"><%= safe_join(f.object.errors[:bio], "、") %></span>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= link_to "Previous", step2_event_registration_path(@event, @registration), :class => "btn btn-default" %>
+    <%= f.submit "Submit", :class => "btn btn-primary" %>
+  </div>
+
+<% end %>
+

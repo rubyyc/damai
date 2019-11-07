@@ -39,6 +39,8 @@ gem 'jbuilder', '~> 2.5'
 gem "select2-rails"
 gem 'ranked-model'
 gem 'jquery-ui-rails'
+gem "rails-i18n"
+gem "devise-i18n"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem "nested_form_fields"
