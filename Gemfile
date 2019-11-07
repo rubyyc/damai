@@ -41,6 +41,7 @@ gem 'ranked-model'
 gem 'jquery-ui-rails'
 gem "rails-i18n"
 gem "devise-i18n"
+gem 'kaminari'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem "nested_form_fields"

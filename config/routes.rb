@@ -17,8 +17,10 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+
     root "events#index"
     resources :events do
+      resources :registrations, :controller => "event_registrations"
       collection do
         post :bulk_update
       end
