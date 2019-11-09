@@ -1,6 +1,8 @@
   class Admin::VersionsController < AdminController
+    before_action :require_admin!
 
-      def index
+
+    def index
           @versions = PaperTrail::Version.order("id DESC").page(params[:page])
         end
 

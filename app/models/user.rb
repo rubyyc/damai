@@ -11,6 +11,8 @@ class User < ApplicationRecord
 
   has_many :registrations
 
+  ROLES = ["admin", "editor"]
+
   def display_name
     self.email.split("@").first
   end
