@@ -47,6 +47,8 @@ gem 'ransack'
 gem 'carrierwave'
 gem "mini_magick"
 gem 'paper_trail'
+
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem "nested_form_fields"
