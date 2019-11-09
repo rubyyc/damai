@@ -48,7 +48,9 @@ gem 'carrierwave'
 gem "mini_magick"
 gem 'paper_trail'
 
-
+gem 'rubyzip'
+gem 'axlsx'
+gem 'axlsx_rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem "nested_form_fields"
