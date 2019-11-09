@@ -5,6 +5,9 @@
    <% end %>
 <h2><%= @event.category.try(:name) %></h2>
 
+
+
+
 <%= sanitize @event.description %>
 
   <% if @event.images.present? %>
@@ -12,6 +15,14 @@
           <%= link_to image_tag(i.url(:small)), i.url %>
         <% end %>
     <% end %>
+
+
+  <ul>
+    <% @event.attachments.each do |a| %>
+        <li><%= link_to a.description, a.attachment.url %></li>
+      <% end %>
+    </ul>
+
 
 
 <p><%= link_to "开始报名", new_event_registration_path(@event), :class => "btn btn-primary" %></p>
