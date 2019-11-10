@@ -22,10 +22,8 @@ Rails.application.routes.draw do
       post :undo
     end
 
-
-  root "events#index"
     resources :events do
-      resources :registrations, :controller => "event_registrations"
+      #resources :registrations, :controller => "event_registrations"
       collection do
         post :bulk_update
       end
@@ -33,6 +31,19 @@ Rails.application.routes.draw do
       member do
         post :reorder
       end
+
+      resources :registration_imports
+
+      resources :registrations, :controller => "event_registrations" do
+        collection do
+          post :import
+        end
+      end
+
+
+  root "events#index"
+
+
 
     end
     resources :users
