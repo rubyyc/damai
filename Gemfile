@@ -51,7 +51,7 @@ gem 'paper_trail'
 gem 'rubyzip'
 gem 'axlsx'
 gem 'axlsx_rails'
-gem 'sidekiq', '~> 4.1'
+gem 'sidekiq', '~> 5.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem "nested_form_fields"
